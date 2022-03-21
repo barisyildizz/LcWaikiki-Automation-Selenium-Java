@@ -17,6 +17,7 @@ public class BaseTest {
     static By ürünLocator = By.cssSelector("div[class='col-sm-12 uzun visible-lg visible-md'] a");
     static By ürünSecmeLocator = By.className("product-image");
     static By bedenSecmeLocator = By.xpath("//*[@id='option-size']/a[3]");
+    static By boySecmeLocator = By.xpath("//*[@id='option-height']/a[2]");
     static By sepeteEkleLocator = By.id("pd_add_to_cart");
     static By sepetLocator = By.id("shopping-cart");
     static By anasayfaLocator = By.id("Path_2157");
@@ -50,11 +51,13 @@ public class BaseTest {
         Thread.sleep(400);
 
 
-        //beden seç ve ürünü sepete ekle
+        //beden,boy seç ve ürünü sepete ekle
         driver.findElement(bedenSecmeLocator).click();
+        driver.findElement(boySecmeLocator).click();
+        Thread.sleep(1000);
         driver.findElement(sepeteEkleLocator).click();
         String actualTitle4 = driver.getTitle();
-        String expectedTitle4 = "İndigo Regular Fit Uzun Kollu Erkek Jean Gömlek - S2HQ08Z8-311 - LC Waikiki";
+        String expectedTitle4 = "İndigo 730 Havuç Erkek Jean Pantolon - S2CG51Z8-309 - LC Waikiki";
         Assert.assertEquals(actualTitle4,expectedTitle4,"Ürün sayfasında değilsiniz!");
 
         //sepet sayfasına git
