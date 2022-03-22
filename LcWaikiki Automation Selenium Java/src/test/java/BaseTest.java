@@ -14,7 +14,6 @@ public class BaseTest {
 
     static WebDriver driver;
     static By kategoriSecLocator = By.className("menu-header-item");
-    //static By ürünLocator = By.cssSelector("div[class='col-sm-12 uzun visible-lg visible-md'] a");
     static By ürünLocator = By.xpath("//*[@class='col-sm-12 uzun visible-lg visible-md']");
     static By ürünSecmeLocator = By.className("product-image");
     static By bedenSecmeLocator = By.xpath("//*[@id='option-size']/a[1]");
