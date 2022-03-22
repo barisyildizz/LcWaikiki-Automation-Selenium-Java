@@ -14,8 +14,8 @@ public class BaseTest {
 
     static WebDriver driver;
     static By kategoriSecLocator = By.className("menu-header-item");
-    static By ürünLocator = By.xpath("//*[@class='col-sm-12 uzun visible-lg visible-md']");
-    static By ürünSecmeLocator = By.className("product-image");
+    static By urunLocator = By.xpath("//*[@class='col-sm-12 uzun visible-lg visible-md']");
+    static By urunSecmeLocator = By.className("product-image");
     static By bedenSecmeLocator = By.xpath("//*[@id='option-size']/a[1]");
     static By boySecmeLocator = By.xpath("//*[@id='option-height']/a[1]");
     static By sepeteEkleLocator = By.id("pd_add_to_cart");
@@ -42,7 +42,7 @@ public class BaseTest {
 
 
         //Erkek Denim Çok Satanlar sayfasına git
-        driver.findElement(ürünLocator).click();
+        driver.findElement(urunLocator).click();
         String actualTitle3 = driver.getTitle();
         String expectedTitle3 = "Erkek Denim Çok Satanlar - Sayfa 1 - LC Waikiki";
         Assert.assertEquals(actualTitle3,expectedTitle3,"Erkek Denim En Çok Satanlar Sayfasında değilsiniz!");
@@ -50,7 +50,7 @@ public class BaseTest {
 
 
         //3. ürüne git
-        List<WebElement> ürünler = driver.findElements(ürünSecmeLocator);
+        List<WebElement> ürünler = driver.findElements(urunSecmeLocator);
         ürünler.get(2).click();
         Thread.sleep(400);
 
