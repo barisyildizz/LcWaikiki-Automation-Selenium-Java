@@ -12,7 +12,6 @@ import java.util.List;
 public class BaseTest {
 
     static WebDriver driver;
-    static By cookieDismissLocator = By.xpath("//*[@class='cookie__dismiss']");
     static By kategoriSecLocator = By.className("menu-header-item");
     static By urunLocator = By.xpath("//*[@class='col-sm-12 uzun visible-lg visible-md']");
     static By urunSecmeLocator = By.className("product-image");
@@ -32,9 +31,7 @@ public class BaseTest {
         String expectedTitle = "LC Waikiki | İlk Alışverişte Kargo Bedava! - LC Waikiki";
         Assert.assertEquals(actualTitle,expectedTitle,"Anasayfada değilsiniz!");
 
-        //cookie kapatma
-        driver.findElement(cookieDismissLocator).click();
-
+       
         //erkek kategori sayfasına git
         List<WebElement> kategoriler = driver.findElements(kategoriSecLocator);
         kategoriler.get(1).click();
